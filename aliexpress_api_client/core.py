@@ -9,10 +9,12 @@ LOGGER = logging.getLogger(__name__)
 
 
 class AliExpress(object):
-    def __init__(self, api_key, affiliate_id=None, digital_signature=None):
+    api_key = None
+    affiliate_id = None
+
+    def __init__(self, api_key, affiliate_id=None):
         self.api_key = api_key
         self.affiliate_id = affiliate_id
-        self.digital_signature = digital_signature
 
     def get_product_list(self, fields, keywords, **kwargs):
         if not isinstance(fields, list):

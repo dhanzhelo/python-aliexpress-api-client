@@ -8,7 +8,7 @@ from setuptools import setup
 
 setup(
     name='aliexpress-api-client',
-    version='0.1.0',
+    version='1.0',
     description='AliExpress API Client',
     url='https://github.com/kronas/python-aliexpress-api-client',
         
@@ -21,7 +21,7 @@ setup(
     install_requires=[],
 
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
