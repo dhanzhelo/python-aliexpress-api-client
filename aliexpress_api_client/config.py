@@ -19,7 +19,10 @@ ALIBABA_API_PARAMS = {
         'pageSize',
         'sort',
         'startCreditScore',
-        'endCreditScore'
+        'endCreditScore',
+        'highQualityItems',
+        'localCurrency',
+        'language'
     ],
     'details': [
         'fields',
@@ -49,7 +52,8 @@ ALIBABA_API_FIELDS = {
         'volume',
         'packageType',
         'lotNum',
-        'validTime'
+        'validTime',
+        'localPrice'
     ],
     'details': [
 
@@ -76,7 +80,9 @@ ALIBABA_API_FIELDS = {
         'trackingId',
         'publisherId',
         'url',
-        'promotionUrl'
+        'promotionUrl',
+        'localPrice'
+        
     ]
 }
 
@@ -109,7 +115,8 @@ ALIBABA_API_CATEGORIES = {
     18: 'Sports & Entertainment',
     1420: 'Tools',
     26: 'Toys & Hobbies',
-    1511: 'Watches'
+    1511: 'Watches',
+    320: 'Wedding & Events'
 }
 
 ALIBABA_API_ERROR_CODES = {
