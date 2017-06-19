@@ -1,9 +1,17 @@
 import logging
-import urllib
 import json
 
-from .config import ALIBABA_API_URL, ALIBABA_API_CALLS, ALIBABA_API_FIELDS, ALIBABA_API_PARAMS, ALIBABA_API_CATEGORIES
-from .errors import *
+
+try:
+    # python 3.x
+    from urllib.parse import urlencode
+    from urllib.request import urlopen
+except ImportError:
+    # python 2.x
+    from urllib import urlopen, urlencode
+
+from config import ALIBABA_API_URL, ALIBABA_API_CALLS, ALIBABA_API_FIELDS, ALIBABA_API_PARAMS, ALIBABA_API_CATEGORIES
+from errors import *
 
 LOGGER = logging.getLogger(__name__)
 
@@ -99,15 +107,16 @@ class AliExpress(object):
         url = ALIBABA_API_URL % {
             'api_call': ALIBABA_API_CALLS[call],
             'api_key': self.api_key,
-            'call_parameters': urllib.urlencode(params)
+            'call_parameters': urlencode(params)
         }
         LOGGER.info('Perform API request url: %s' % url)
-        response = urllib.urlopen(url)
+        response = urlopen(url)
 
         if response.code != 200:
-            raise NetworkError(call=call, code=response.code, msg=json.loads(response.read())['error_message'])
+            raise NetworkError(call=call, code=response.code,
+                               msg=json.loads(response.read().decode('utf-8'))['error_message'])
 
-        response_json = json.loads(response.read())
+        response_json = json.loads(response.read().decode('utf-8'))
 
         if response_json['errorCode'] != 20010000:
             raise _e(call=call, code=response_json['errorCode'])
