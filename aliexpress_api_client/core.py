@@ -10,8 +10,8 @@ except ImportError:
     # python 2.x
     from urllib import urlopen, urlencode
 
-from config import ALIBABA_API_URL, ALIBABA_API_CALLS, ALIBABA_API_FIELDS, ALIBABA_API_PARAMS, ALIBABA_API_CATEGORIES
-from errors import *
+from .config import ALIBABA_API_URL, ALIBABA_API_CALLS, ALIBABA_API_FIELDS, ALIBABA_API_PARAMS, ALIBABA_API_CATEGORIES
+from .errors import *
 
 LOGGER = logging.getLogger(__name__)
 
