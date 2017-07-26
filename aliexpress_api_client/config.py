@@ -53,10 +53,10 @@ ALIBABA_API_FIELDS = {
         'packageType',
         'lotNum',
         'validTime',
-        'localPrice'
+        'localPrice',
+        'allImageUrls'
     ],
     'details': [
-
         'productId',
         'productTitle',
         'productUrl',
@@ -73,7 +73,8 @@ ALIBABA_API_FIELDS = {
         'lotNum',
         'validTime',
         'storeName',
-        'storeUrl'
+        'storeUrl',
+        'allImageUrls',
     ],
     'links': [
         'totalResults',
